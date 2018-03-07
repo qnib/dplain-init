@@ -15,7 +15,6 @@ RUN apt-get update \
  && echo "# go-fisherman: $(/usr/local/bin/go-github rLatestUrl --ghorg qnib --ghrepo go-fisherman --regex '.*_x86' --limit 1)" \
  && wget -qO /usr/local/bin/go-fisherman "$(/usr/local/bin/go-github rLatestUrl --ghorg qnib --ghrepo go-fisherman --regex '.*_x86' --limit 1)" \
  && chmod +x /usr/local/bin/go-fisherman \
- && rm -f /usr/local/bin/go-github \
  && apt-get purge -y wget ca-certificates libidn11 openssl \
  && rm -rf /var/lib/apt/lists/*
 HEALTHCHECK --interval=5s --retries=5 --timeout=2s \
